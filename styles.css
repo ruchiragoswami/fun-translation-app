@@ -5,7 +5,7 @@ textarea {
     /* background-color: pink; */
 }
 
-.output {
+#output {
     border: 2px solid teal; 
     height: 20vh; 
     width: 85%; 
