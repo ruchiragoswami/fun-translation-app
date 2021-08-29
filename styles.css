@@ -1,12 +1,80 @@
+/* Styles for Pig-Latin */
+
+@import url('https://fonts.googleapis.com/css2?family=Solway&display=swap');
+
+:root {
+    --color-1: #3D471F;
+    --color-2: #7D805B ;
+    --color-3: #D4C183;
+    --color-4: #E8DBA4;
+    --color-5: #8C7C2F; 
+
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--color-3);
+    /* border: 2px solid blueviolet; */
+}
+
+h1 {
+    /* border: 1px solid green; */
+    background-color:var(--color-1);
+    color: var(--color-4);
+    text-align: center;
+    padding: 1rem;
+}
+
+h1, h2 {
+    font-family: Solway;
+}
+
+img {
+    /* border: 2px solid red; */
+    display: block;
+    max-width: 55%;
+    height: 9%;
+    margin: 0 auto;
+    padding: 1rem;
+    /* text-align: center; */
+
+}
 
 textarea {
     height: 15vh;
-    width: 85%;
-    /* background-color: pink; */
+    width: 90%;
+    margin: 1rem;
+    /* border: 2px solid gold;  */
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
+
+#btn-translate {
+    margin: 1rem;
+    padding: 1rem;
+    width: 10rem; 
+    font-size: large;
+    font-weight: 500;
+    background-color: var(--color-1);
+    color: var(--color-4);
+}
+
+h2 {
+    margin: 1rem;
+    color: var(--color-1);
 }
 
 #output {
-    border: 2px solid teal; 
-    height: 20vh; 
-    width: 85%; 
+    margin: 1rem; 
+    background-color: var(--color-4);
+    border: 2px solid var(--color-2);
+    height: 20vh;
+    width: 85%;
 }
