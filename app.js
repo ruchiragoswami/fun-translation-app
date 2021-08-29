@@ -1,34 +1,30 @@
-const btnTranslate = document.querySelector("#btn-translate");
-const txtInput = document.querySelector("#text-input");
-const outputTxt = document.querySelector("#output");
+let userInput = document.querySelector("#text-input");
+let translateButton = document.querySelector("#btn-translate");
+let outputDiv = document.querySelector("#output");
 
-// const serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+let serverURL = "https://api.funtranslations.com/translate/pig-latin.json";
 
-const serverURL = "https://api.funtranslations.com/translate/valyrian.json";
-
-
-function getTranslationURL(text) {
+function constructURL(text) {
     return serverURL + "?" + "text=" + text;
 }
 
-function errorHandler(error) {
-    console.log("error occured.", error);
-    alert("Something is wrong with the server, please try again after sometime.")
+function errorHandler() {
+    alert("Something went wrong! Please try again later :) ");
 }
-
 
 function clickHandler() {
-    
-    var inputText = txtInput.value;
+    console.log("the button was clicked, you entered: " + userInput.value);
+    // Input
+    let inputText = userInput.value;
 
-    fetch(getTranslationURL(inputText)) 
+    // Processing
+    fetch(constructURL(inputText))
         .then(response => response.json())
-        .then(hey=> { 
-            var translatedText = hey.contents.translated;
-            outputTxt.innerText = translatedText;
-        })
-        .catch(errorHandler);                      
-}
+        .then(hey => {
+            // output
+            let translatedText = hey.contents.translated;
+            outputDiv.innerText = translatedText;} )
+        .catch(errorHandler);    
+    }
 
-btnTranslate.addEventListener("click", clickHandler); 
-
+translateButton.addEventListener("click", clickHandler);
